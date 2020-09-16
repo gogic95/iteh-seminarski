@@ -17,9 +17,29 @@
         </div>
       </div>
 
-      <ul class="main-nav nav navbar-nav navbar-left">
-        <li><a href="index.php">Ponuda</a></li>
-        <li><a href="administracija.php">Administracija</a></li>
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li><a href="index.php">Početna</a></li>
+        <?php
+            if(isset($_SESSION['user']) && $_SESSION['user']->ulogovan){
+                if($_SESSION['user']->isAdmin){
+                  ?>
+                  <li><a href="administracija.php">Administracija</a></li>
+                  <?php
+                }
+
+                ?>
+                <li><a href="vizuelizacija.php">Grafički prikaz podataka</a></li>
+                <li><a href="logout.php">LogOut</a></li>
+                <?php
+            }else{
+              ?>
+              <li><a href="registracija.php">Registracija</a></li>
+              <li><a href="login.php">LogIn</a></li>
+              <?php
+            }
+
+        ?>
+
       </ul>
     </div>
   </nav>

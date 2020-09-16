@@ -1,21 +1,31 @@
 <?php
 include 'sesija.php';
+include 'konekcija.php';
+$poruka = "";
+if(isset($_POST['login'])){
+  $user = $konekcija->real_escape_string(trim($_POST['username']));
+  $pass = $konekcija->real_escape_string(trim($_POST['password']));
+  if(User::login($konekcija,$user,$pass)){
+    $poruka = "Uspešno ulogovani korisnik";
+  }else{
+    $poruka = "Neuspešno logovanje";
+  }
+
+}
  ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PARADISE TOURS</title>
 
-    <title>PARADISE TOURS</title>
-    
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
-
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
 	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
 	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
@@ -23,200 +33,47 @@ include 'sesija.php';
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
-
 </head>
 
 <body>
-    
-    <?php
+  <?php
       include 'header.php';
-    ?>
+   ?>
 
-    <div id="about" class="section md-padding">
+	<div id="about" class="section md-padding">
 
 		<div class="container">
 
-			<div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
+          <div class="text-center">
+              <h1><i class="fa fa-pencil"></i> - Login forma</h1>
+              <form method="POST" action="">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control">
+                <label for="submit"></label>
+                <input type="submit" name="login" value="Login" class="btn btn-lg btn-default">
+              </form>
+              <?php echo $poruka; ?>
+          </div>
 
-				<div class="section-header text-center">
-					<h2 class="title">Zašto baš mi?</h2>
-				</div>
-
-				<div class="col-md-4">
-					<div class="about">
-                    <i class="fa fa-money"></i>
-						<h3>Najpovoljniji aranžmani!</h3>
-						
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="about">
-                        <i class="fa fa-globe"></i>
-						<h3>Najbolje destinacije!</h3>
-						
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="about">
-                        <i class="fa fa-graduation-cap"></i>
-						<h3>17 godina iskustva!</h3>
-					
-					</div>
-				</div>
-
-			</div>
+      </div>
 
 		</div>
 
 	</div>
 
 
-    <div id="numbers" class="section sm-padding">
-
-		<div class="bg-img" style="background-image: url('./slike/pocetna2.jpg');">
-			<div class="overlay"></div>
-		</div>
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-users"></i>
-						<h3 class="white-text"><span class="counter">800+</span></h3>
-						<span class="white-text">Klijenata svake godine</span>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-                        <i class="fa fa-line-chart"></i>
-						<h3 class="white-text"><span class="counter">4.7</span></h3>
-						<span class="white-text">Prosečna ocena naših putovanja</span>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-                        <i class="fa fa-globe"></i>
-						<h3 class="white-text"><span class="counter">20+</span></h3>
-						<span class="white-text">Različitih destinacija svake godine</span>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-trophy"></i>
-						<h3 class="white-text"><span class="counter">5</span></h3>
-						<span class="white-text">Nagrada za agenciju godine</span>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
 	</div>
 
-
-
-    <div id="service" class="section md-padding">
-
-		<div class="container">
-            <div class="section-header text-center">
-                <h2 class="title">Ponuda</h2>
-                <p>*Cene aranžmana po osobi</p>
-				<button class="btn btn-default" onclick="vratiSvaPutovanjaSortirano('rastuce')">Sortiraj rastuće</button>
-				<button class="btn btn-default" onclick="vratiSvaPutovanjaSortirano('opadajuce')">Sortiraj opadajuće</button>
-            </div>
-			<div id="putovanja" class="row">
-
-
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-    <div id="testimonial" class="section md-padding">
-
-		<div class="bg-img" style="background-image: url('./slike/pocetna3.jpg');">
-			<div class="overlay"></div>
-		</div>
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-10 col-md-offset-1">
-					<div id="testimonial-slider" class="owl-carousel owl-theme">
-
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-    <div id="contact" class="section md-padding">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="section-header text-center">
-					<h2 class="title">KONTAKTIRAJTE NAS</h2>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-phone"></i>
-						<h3>Telefon</h3>
-						<p>+381 64 379 1312</p>
-					</div>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-envelope"></i>
-						<h3>Email</h3>
-						<p>office@paradisetours.com</p>
-					</div>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-map-marker"></i>
-						<h3>Lokacija</h3>
-						<p>Miška Kranjca 12, Rakovica</p>
-					</div>
-				</div>
-			</div>
-
-			<div id="google-map" data-latitude="44.743092" data-longitude="20.445398" style="height: 500px;"></div>
-
-
-		</div>
- 
-	</div>
-
-
-    <?php
+	<?php
 		include 'footer.php';
 	?>
 
-    
-    <div id="back-to-top"></div>
+	<div id="back-to-top"></div>
 
-    <div id="preloader">
+	<div id="preloader">
 		<div class="preloader">
 			<span></span>
 			<span></span>
@@ -225,14 +82,13 @@ include 'sesija.php';
 		</div>
 	</div>
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-
-    <script>
+  <script>
       function vratiSvaPutovanja(){
           $.ajax({
             url: "metode.php",
@@ -252,7 +108,7 @@ include 'sesija.php';
 								nalepi+='</div>';
 							});
 
-							$("#putovanja").html(nalepi);
+							$("#usluge").html(nalepi);
             }
           });
 
@@ -261,8 +117,7 @@ include 'sesija.php';
       vratiSvaPutovanja();
    </script>
 
-
-    <script>
+<script>
        function vratiSvaPutovanjaSortirano(sort){
            $.ajax({
              url: "metode.php",
@@ -289,8 +144,7 @@ include 'sesija.php';
        }
 
     </script>
-
-	<script>
+		<script>
 	      function vratiSveKomentare(){
 	          $.ajax({
 	            url: "metode.php",
@@ -338,8 +192,7 @@ include 'sesija.php';
 	      vratiSveKomentare();
 	</script>
 
-
-
+		
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg5Q_Bsa5Uj0rC8m3xKCm259a3_EplIlc"></script>
 		<script>
 	    var get_latitude = $('#google-map').data('latitude');
@@ -561,10 +414,6 @@ include 'sesija.php';
 		 }
 		 google.maps.event.addDomListener(window, 'load', initialize_google_map);
 	  </script>
-
-
-
 </body>
-
 
 </html>

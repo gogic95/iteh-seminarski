@@ -1,4 +1,5 @@
 <?php
+include 'sesija.php';
 include 'konekcija.php';
 include 'baza/komentar.php';
  ?>
@@ -22,6 +23,8 @@ include 'baza/komentar.php';
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+
 </head>
 
 <body>
@@ -29,7 +32,7 @@ include 'baza/komentar.php';
       include 'header.php';
    ?>
 
-
+	
     <div id="service" class="section md-padding">
 
         <div class="container">
@@ -70,7 +73,6 @@ include 'baza/komentar.php';
 
     </div>
 
-
     <div id="service" class="section md-padding">
 
 		<div class="container">
@@ -94,6 +96,7 @@ include 'baza/komentar.php';
         			$jsonOdgovor = curl_exec($curl);
              		$podaci = json_decode($jsonOdgovor);
 					foreach ($podaci as $p ) {
+
 					?>
 								<tr>
 									<td><img src="slike/<?php echo $p->slika ?>" class="img img-responsive" alt=""></td>
@@ -140,7 +143,9 @@ include 'baza/komentar.php';
 			</form>
 
 		</div>
-	</div>                        
+	</div>     
+
+
 
     <?php
 			include 'footer.php';
@@ -162,6 +167,8 @@ include 'baza/komentar.php';
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
                 
     <script>
       function vratiSvaPutovanja(){
@@ -202,7 +209,8 @@ include 'baza/komentar.php';
             }
           });
 
-      }    
+	  }    
+
       vratiSvaPutovanja();
    </script>    
 
@@ -225,8 +233,7 @@ include 'baza/komentar.php';
        }
 
     </script>       
-
-    <script>
+    	<script>
         function obrisi(id){
             $.ajax({
               url: "metode.php",
@@ -241,6 +248,13 @@ include 'baza/komentar.php';
         }
 
      </script>       
+
+<script>
+     $(document).ready( function () {
+        $('#tabelaKomentari').DataTable();
+        } );
+
+     </script>
 
     
 </body>

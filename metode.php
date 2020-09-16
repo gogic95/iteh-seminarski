@@ -1,4 +1,5 @@
 <?php
+include 'sesija.php';
 include 'baza/putovanja.php';
 include 'baza/komentar.php';
 include 'konekcija.php';

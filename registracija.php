@@ -1,5 +1,22 @@
 <?php
 include 'sesija.php';
+include 'konekcija.php';
+$poruka = "";
+if(isset($_POST['registracija'])){
+  $ime = $konekcija->real_escape_string(trim($_POST['ime']));
+  $username = $konekcija->real_escape_string(trim($_POST['username']));
+  $pass = $konekcija->real_escape_string(trim($_POST['password']));
+  $user = new User();
+  $user->imePrezime = $ime;
+  $user->username = $username;
+  $user->password = $pass;
+  if($user->save($konekcija)){
+    $poruka = "Uspesno registrovanje";
+  }else{
+    $poruka = "Neuspesno registrovanje";
+  }
+
+}
  ?>
  
 <!DOCTYPE html>
@@ -32,181 +49,34 @@ include 'sesija.php';
       include 'header.php';
     ?>
 
-    <div id="about" class="section md-padding">
+<div id="about" class="section md-padding">
 
-		<div class="container">
+<div class="container">
 
-			<div class="row">
+<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
+  <div class="text-center">
+      <h1><i class="fa fa-pencil"></i> - Registraciona forma</h1>
+      <form method="POST" action="">
+        <label for="username">Ime i prezime</label>
+        <input type="text" name="ime" class="form-control">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control">
+        <label for="submit"></label>
+        <input type="submit" name="registracija" value="Registruj" class="btn btn-lg btn-default">
+      </form>
+      <?php echo $poruka; ?>
+  </div>
 
-				<div class="section-header text-center">
-					<h2 class="title">Zašto baš mi?</h2>
-				</div>
+</div>
 
-				<div class="col-md-4">
-					<div class="about">
-                    <i class="fa fa-money"></i>
-						<h3>Najpovoljniji aranžmani!</h3>
-						
-					</div>
-				</div>
+</div>
 
-				<div class="col-md-4">
-					<div class="about">
-                        <i class="fa fa-globe"></i>
-						<h3>Najbolje destinacije!</h3>
-						
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="about">
-                        <i class="fa fa-graduation-cap"></i>
-						<h3>17 godina iskustva!</h3>
-					
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
+</div>
 
 
-    <div id="numbers" class="section sm-padding">
-
-		<div class="bg-img" style="background-image: url('./slike/pocetna2.jpg');">
-			<div class="overlay"></div>
-		</div>
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-users"></i>
-						<h3 class="white-text"><span class="counter">800+</span></h3>
-						<span class="white-text">Klijenata svake godine</span>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-                        <i class="fa fa-line-chart"></i>
-						<h3 class="white-text"><span class="counter">4.7</span></h3>
-						<span class="white-text">Prosečna ocena naših putovanja</span>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-                        <i class="fa fa-globe"></i>
-						<h3 class="white-text"><span class="counter">20+</span></h3>
-						<span class="white-text">Različitih destinacija svake godine</span>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-trophy"></i>
-						<h3 class="white-text"><span class="counter">5</span></h3>
-						<span class="white-text">Nagrada za agenciju godine</span>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-
-
-
-    <div id="service" class="section md-padding">
-
-		<div class="container">
-            <div class="section-header text-center">
-                <h2 class="title">Ponuda</h2>
-                <p>*Cene aranžmana po osobi</p>
-				<button class="btn btn-default" onclick="vratiSvaPutovanjaSortirano('rastuce')">Sortiraj rastuće</button>
-				<button class="btn btn-default" onclick="vratiSvaPutovanjaSortirano('opadajuce')">Sortiraj opadajuće</button>
-            </div>
-			<div id="putovanja" class="row">
-
-
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-    <div id="testimonial" class="section md-padding">
-
-		<div class="bg-img" style="background-image: url('./slike/pocetna3.jpg');">
-			<div class="overlay"></div>
-		</div>
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-10 col-md-offset-1">
-					<div id="testimonial-slider" class="owl-carousel owl-theme">
-
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-    <div id="contact" class="section md-padding">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="section-header text-center">
-					<h2 class="title">KONTAKTIRAJTE NAS</h2>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-phone"></i>
-						<h3>Telefon</h3>
-						<p>+381 64 379 1312</p>
-					</div>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-envelope"></i>
-						<h3>Email</h3>
-						<p>office@paradisetours.com</p>
-					</div>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-map-marker"></i>
-						<h3>Lokacija</h3>
-						<p>Miška Kranjca 12, Rakovica</p>
-					</div>
-				</div>
-			</div>
-
-			<div id="google-map" data-latitude="44.743092" data-longitude="20.445398" style="height: 500px;"></div>
-
-
-		</div>
- 
-	</div>
+</div>
 
 
     <?php
