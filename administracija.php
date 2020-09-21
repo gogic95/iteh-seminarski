@@ -91,7 +91,7 @@ include 'baza/komentar.php';
 				<tbody>
 					<?php
 							//$podaci = Komentar::getAll($konekcija);
-              		$curl = curl_init("http://localhost/trecidomaci/api/komentari");
+              		$curl = curl_init("http://localhost/seminarski/api/komentari");
         			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         			$jsonOdgovor = curl_exec($curl);
              		$podaci = json_decode($jsonOdgovor);
