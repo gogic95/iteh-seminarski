@@ -85,7 +85,7 @@ include 'konekcija.php';
           var data = google.visualization.arrayToDataTable(podaci);
           console.log(data);
 
-          var options = {'title':'Broj aranžmana po cenovnom rangu', 'width':600, 'height':500,pieHole: 0.3};
+          var options = {'title':'Broj aranžmana po cenovnom rangu', 'width':900, 'height':500,pieHole: 0.4};
 
           var chart = new google.visualization.PieChart(document.getElementById('piechart'));
           chart.draw(data, options);
