@@ -1,0 +1,91 @@
+[14-Sep-2020 05:11:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\metode.php:19
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\metode.php on line 19
+[14-Sep-2020 05:11:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in C:\xampp\htdocs\trecidomaci\baza\putovanja.php:86
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(8): Putovanje::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\putovanja.php on line 86
+[14-Sep-2020 05:26:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:26:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in C:\xampp\htdocs\trecidomaci\baza\putovanja.php:86
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(8): Putovanje::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\putovanja.php on line 86
+[14-Sep-2020 05:26:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in C:\xampp\htdocs\trecidomaci\baza\putovanja.php:86
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(8): Putovanje::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\putovanja.php on line 86
+[14-Sep-2020 05:26:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\metode.php:19
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\metode.php on line 19
+[14-Sep-2020 05:29:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:29:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in C:\xampp\htdocs\trecidomaci\baza\putovanja.php:86
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(8): Putovanje::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\putovanja.php on line 86
+[14-Sep-2020 05:29:51 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:29:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in C:\xampp\htdocs\trecidomaci\baza\putovanja.php:86
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(8): Putovanje::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\putovanja.php on line 86
+[14-Sep-2020 05:49:44 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:50:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:54:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:56:33 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\trecidomaci\administracija.php on line 96
+[14-Sep-2020 05:59:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:05:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:15:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:15:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:15:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:18:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:29:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:29:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:31:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[14-Sep-2020 06:33:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Komentar' not found in C:\xampp\htdocs\trecidomaci\baza\komentari.php:28
+Stack trace:
+#0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
+#1 {main}
+  thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
+[21-Sep-2020 21:18:25 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\iteh-seminarski\administracija.php on line 98
