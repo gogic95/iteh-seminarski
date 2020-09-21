@@ -46,7 +46,7 @@ class Putovanje{
       ];
 
         $json = json_encode($podaci);
-  			$curl = curl_init("http://localhost/trecidomaci/api/novoPutovanje");
+  			$curl = curl_init("http://localhost/seminarski/api/novoPutovanje");
   			curl_setopt($curl, CURLOPT_POST, TRUE);
   			curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
