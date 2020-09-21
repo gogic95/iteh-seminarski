@@ -88,4 +88,3 @@ Stack trace:
 #0 C:\xampp\htdocs\trecidomaci\metode.php(19): Komentari::getAll(Object(mysqli))
 #1 {main}
   thrown in C:\xampp\htdocs\trecidomaci\baza\komentari.php on line 28
-[21-Sep-2020 21:18:25 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\iteh-seminarski\administracija.php on line 98
