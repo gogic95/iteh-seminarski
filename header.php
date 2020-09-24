@@ -24,11 +24,12 @@
                 if($_SESSION['user']->isAdmin){
                   ?>
                   <li><a href="administracija.php">Administracija</a></li>
+                  <li><a href="vizuelizacija.php">Grafički prikaz podataka</a></li>
                   <?php
                 }
 
                 ?>
-                <li><a href="vizuelizacija.php">Grafički prikaz podataka</a></li>
+                
                 <li><a href="logout.php">LogOut</a></li>
                 <?php
             }else{
